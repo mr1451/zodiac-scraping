@@ -1,0 +1,50 @@
+{% extends "bootstrap_layout.html" %}
+{% set active_page = "home" %}
+
+{% block content %}
+
+    <h2>Home</h2>
+
+    <p>Welcome, parents, to our app! We hope to help you learn more about your baby.</p>
+
+
+    
+    <h1>Please enter their name and sex...</h1>
+
+    <p>...and then click "Submit"!</p>
+
+    <form name="name_input" method="POST" action=".">
+
+        <label>First Name:</label>
+        <input type="text" name="name" placeholder="John" value="John">
+        <br>
+
+        <label>Sex:</label>
+        <select name="sex">
+            <option value="M" selected="true">Male</option>
+            <option value="F">Female</option>
+        </select>
+        <br>
+
+        <label>Birthday:</label>
+        <select name="sign">
+            <option value="Aries" selected="true">Mar 21 - Apr 20</option>
+            <option value="Taurus">Apr 21 - May 20</option>
+            <option value="Gemini">May 21 - Jun 21</option>
+            <option value="Cancer">Jun 22 - Jul 22</option>
+            <option value="Leo">Jul 23 - Aug 23</option>
+            <option value="Virgo">Aug 24 - Sep 23</option>
+            <option value="Libra">Sep 24 - Oct 23</option>
+            <option value="Scorpio">Oct 24 - Nov 22</option>
+            <option value="Saggitarius">Nov 23 - Dec 21</option>
+            <option value="Capricorn">Dec 22 - Jan 20</option>
+            <option value="Aquarius">Jan 21 - Feb 18</option>
+            <option value="Pisces">Feb 19 - Mar 20</option>
+        </select>
+        <br>
+
+        <input type="submit" value="Submit">
+        
+    </form>
+
+{% endblock %}
