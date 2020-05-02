@@ -18,11 +18,11 @@ def about():
     #return "About Me (TODO)"
     return render_template("about.html") 
 
-@home_routes.route("/zodiacresult")
+@home_routes.route("/zodiacresult", methods =["POST"])
 def zodiac():
     print("VISITED THE ZODIAC PAGE")
     #return "Zodiac (TODO)"
-    return render_template("zodiac.html") 
+    return render_template("zodiacresult.html") 
 
 @home_routes.route("/nameresult", methods=["POST"]) #https://www.youtube.com/watch?v=AEM8_4NBU04
 def passvalue():

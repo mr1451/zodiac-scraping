@@ -30,6 +30,7 @@
     {% set nav_links = [
       ('/nameresult', 'name_result', 'Name Result'),
       ('/about', 'about', 'About'),
+      ('/zodiacresult', 'zodiacresult', 'Zodiac Result')
     ] -%}
     {% set active_page = active_page|default('index') -%}
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -41,6 +42,7 @@
         <div class="navbar-nav">
           <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
           <a class="nav-item nav-link" href="/nameresult">Name Result</a>
+          <a class="nav-item nav-link" href="/zodiacresult">Zodiac Result</a>
           <a class="nav-item nav-link" href="/about">About</a>
         </div>
       <div>
