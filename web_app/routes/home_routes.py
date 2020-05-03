@@ -22,18 +22,18 @@ def about():
 
 @home_routes.route("/zodiacresult", methods=["GET"])
 def pass_sign():
-    sign = request.form["sign"]
-    output = zodiac_scrape(sign)
-    return render_template("zodiacresult.html", sign = sign, output = output)
+    sign = request.args["sign"]
+    #output_sign = zodiac_scrape(sign)
+    return render_template("zodiacresult.html", sign = sign)
 
-@home_routes.route("/nameresult", methods=["POST"]) #https://www.youtube.com/watch?v=AEM8_4NBU04
-def passvalue():
-    name = request.form["name"]
-    sex = request.form["sex"]
-    #render_template("nameresult.html", name=name, sex=sex)
-    output = ssa_scrape(name, sex)
-    #output = response.text
-    #print(name)
-    #print (sex)
-    return render_template("nameresult.html", output = output, name=name, sex=sex)
-    
+#@home_routes.route("/nameresult", methods=["POST"]) #https://www.youtube.com/watch?v=AEM8_4NBU04
+#def passvalue():
+#    name = request.form["name"]
+#    sex = request.form["sex"]
+#    #render_template("nameresult.html", name=name, sex=sex)
+#    output = ssa_scrape(name, sex)
+#    #output = response.text
+#    #print(name)
+#    #print (sex)
+#    return render_template("nameresult.html", output = output, name=name, sex=sex)
+#    
