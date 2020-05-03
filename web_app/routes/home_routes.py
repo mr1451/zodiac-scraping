@@ -21,10 +21,10 @@ def about():
     return render_template("about.html") 
 
 @home_routes.route("/zodiacresult", methods=["GET"])
-def passvalue2():
+def pass_sign():
     sign = request.form["sign"]
     output = zodiac_scrape(sign)
-    return render_template("zodiacresult.html")
+    return render_template("zodiacresult.html", sign = sign, output = output)
 
 @home_routes.route("/nameresult", methods=["POST"]) #https://www.youtube.com/watch?v=AEM8_4NBU04
 def passvalue():

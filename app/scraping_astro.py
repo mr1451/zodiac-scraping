@@ -1,11 +1,7 @@
 import requests
 import json
-import os
-
-sign = input("Please input your sign: ")
 
 def zodiac_scrape(sign):
-    #request_url = f"https://zodiacal.herokuapp.com/{sign}"
     request_url = f"http://horoscope-api.herokuapp.com/horoscope/today/{sign}"
     response = requests.get(request_url)
     parsed_response = json.loads(response.text)
@@ -27,4 +23,6 @@ def zodiac_scrape(sign):
     #year = parsed_response["horoscope"]
     #print(year)
 #
+
+sign = input("Please input your sign: ")
 zodiac_scrape(sign)
