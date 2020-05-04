@@ -30,10 +30,6 @@ def pass_sign():
 def pass_ssa():
     name = request.form["name"]
     sex = request.form["sex"]
-    render_template("result.html", name=name, sex=sex)
     output = ssa_scrape(name, sex)
-    #output = response.text
-    #print(name)
-    #print (sex)
     return render_template("result.html", ssa_output = ssa_output, name=name, sex=sex)
     
