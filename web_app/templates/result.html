@@ -5,10 +5,18 @@
     <div class="result">
         <h1>{{name}}</h1>
         <h1>{{sex}}</h1>
-        <h1>{{sign}}</h1>
 
         <p>{{ ssa_output }}</p>
+
+        <h3>Astrological Sign: {{sign}}</h3>
+        <h4>Your child's horoscope for today:</h4>
         <p>{{ zodiac_output }}</p>
+        <h4>A quick glance at your child's week:</h4>
+        <p>{{ zodiac_output_week }}</p>
+        <h4>Exploring the month ahead:</h4>
+        <p>{{ zodiac_output_month }}</p>
+        <h4>An overview of this year for your child:</h4>
+        <p>{{ zodiac_output_year }}</p>
       </div>
 
 {% endblock %}

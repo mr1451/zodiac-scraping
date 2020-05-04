@@ -16,22 +16,27 @@ def zodiac_scrape(sign):
     parsed_response = json.loads(response.text)
     zodiac_output = parsed_response["horoscope"]
     return zodiac_output
-    #request_url = f"http://horoscope-api.herokuapp.com/horoscope/week/{sign}"
-    #response = requests.get(request_url)
-    #parsed_response = json.loads(response.text)
-    #week = parsed_response["horoscope"]
-    #print(week)
-    #request_url = f"http://horoscope-api.herokuapp.com/horoscope/month/{sign}"
-    #response = requests.get(request_url)
-    #parsed_response = json.loads(response.text)
-    #month = parsed_response["horoscope"]
-    #print(month)
-    #request_url = f"http://horoscope-api.herokuapp.com/horoscope/year/{sign}"
-    #response = requests.get(request_url)
-    #parsed_response = json.loads(response.text)
-    #year = parsed_response["horoscope"]
-    #print(year)
-#
+
+def zodiac_scrape_week(sign):
+    request_url = f"http://horoscope-api.herokuapp.com/horoscope/week/{sign}"
+    response = requests.get(request_url)
+    parsed_response = json.loads(response.text)
+    zodiac_output_week = parsed_response["horoscope"]
+    return zodiac_output_week
+
+def zodiac_scrape_month(sign):
+    request_url = f"http://horoscope-api.herokuapp.com/horoscope/month/{sign}"
+    response = requests.get(request_url)
+    parsed_response = json.loads(response.text)
+    zodiac_output_month = parsed_response["horoscope"]
+    return zodiac_output_month
+
+def zodiac_scrape_year(sign):
+    request_url = f"http://horoscope-api.herokuapp.com/horoscope/year/{sign}"
+    response = requests.get(request_url)
+    parsed_response = json.loads(response.text)
+    zodiac_output_year = parsed_response["horoscope"]
+    return zodiac_output_year
 
 if __name__ == "__main__":
 
@@ -45,3 +50,6 @@ if __name__ == "__main__":
             print ("Hey, there might be a mispelling in your sign. Please try again!")
 
     zodiac_scrape(sign)
+    zodiac_scrape_week(sign)
+    zodiac_scrape_month(sign)
+    zodiac_scrape_year(sign)
