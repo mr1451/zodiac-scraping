@@ -1,15 +1,6 @@
 import requests
 import json
 
-signs = ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Saggitarius", "Capricorn", "Aquarius", "Pisces"]
-
-while True:
-    sign = input("Please enter your zodiac sign: ")    
-    if sign in signs:
-        break      
-    else: 
-        print ("Hey, there might be a mispelling in your sign. Please try again!")
-
 def zodiac_scrape(sign):
     """
     Takes user inputted astrological sign and compiles into request url.
@@ -24,8 +15,7 @@ def zodiac_scrape(sign):
     response = requests.get(request_url)
     parsed_response = json.loads(response.text)
     zodiac_output = parsed_response["horoscope"]
-    print(zodiac_output)
-    exit()
+    return zodiac_output
     #request_url = f"http://horoscope-api.herokuapp.com/horoscope/week/{sign}"
     #response = requests.get(request_url)
     #parsed_response = json.loads(response.text)
@@ -43,4 +33,15 @@ def zodiac_scrape(sign):
     #print(year)
 #
 
-zodiac_scrape(sign)
+if __name__ == "__main__":
+
+    signs = ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Saggitarius", "Capricorn", "Aquarius", "Pisces"]
+
+    while True:
+        sign = input("Please enter your zodiac sign: ")    
+        if sign in signs:
+            break      
+        else: 
+            print ("Hey, there might be a mispelling in your sign. Please try again!")
+
+    zodiac_scrape(sign)

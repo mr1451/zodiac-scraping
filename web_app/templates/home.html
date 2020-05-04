@@ -13,7 +13,7 @@
 
     <p>...and then click "Submit"!</p>
 
-    <form name="name_input" method="POST" action=".">
+    <form method="POST" action="/result">
 
         <label>First Name:</label>
         <input type="text" name="name" placeholder="John" value="John">
@@ -43,13 +43,8 @@
         </select>
         <br>
 
-    </form>
-
-    <form action="/result" method="get">
-        
         <button type="submit">Submit</button>
-    
-    </form>
 
+    </form>
 
 {% endblock %}

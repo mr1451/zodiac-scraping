@@ -2,8 +2,8 @@
 
 from flask import Blueprint, render_template, redirect, flash, request 
 import requests
-from web_app.routes.ssa import ssa_scrape 
-from web_app.routes.zodiac import zodiac_scrape
+from app.ssa import ssa_scrape 
+from app.zodiac import zodiac_scrape
 import os
 import json
 
@@ -20,7 +20,7 @@ def about():
     #return "About Me (TODO)"
     return render_template("about.html") 
 
-@home_routes.route("/result", methods=["GET"])
+@home_routes.route("/result", methods=["POST"])
 def pass_sign():
     sign = request.form["sign"]
     zodiac_output = zodiac_scrape(sign)
@@ -31,5 +31,6 @@ def pass_ssa():
     name = request.form["name"]
     sex = request.form["sex"]
     output = ssa_scrape(name, sex)
+    print(output)
     return render_template("result.html", ssa_output = ssa_output, name=name, sex=sex)
     

@@ -5,8 +5,6 @@ from dotenv import load_dotenv
 from flask import Flask
 
 from web_app.routes.home_routes import home_routes
-from web_app.routes.ssa import ssa
-from web_app.routes.zodiac import zodiac
 
 load_dotenv()
 
