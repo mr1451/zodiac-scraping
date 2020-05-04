@@ -24,7 +24,7 @@ def about():
 def pass_sign():
     sign = request.form["sign"]
     zodiac_output = zodiac_scrape(sign)
-    return render_template("zodiacresult.html", sign = sign, zodiac_output = zodiac_output)
+    return render_template("result.html", sign = sign, zodiac_output = zodiac_output)
 
 @home_routes.route("/result", methods=["POST"]) #https://www.youtube.com/watch?v=AEM8_4NBU04
 def pass_ssa():

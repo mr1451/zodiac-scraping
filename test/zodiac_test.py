@@ -8,6 +8,3 @@ CI_ENV = os.environ.get("CI") == "true" # expect default environment variable se
 @pytest.mark.skipif(CI_ENV==True, reason="to avoid configuring credentials on, and issuing requests from, the CI server")
 
 #def test_zodiac_scrape():
-
-
-#def test_ssa_scrape():

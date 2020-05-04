@@ -4,7 +4,7 @@ import requests
 
 from flask import Blueprint, render_template, request
 
-from app.ssa import ssa_scrape
+#from app.ssa import ssa_scrape
 
 ssa = Blueprint("ssa", __name__)
 
