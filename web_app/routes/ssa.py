@@ -1,23 +1,17 @@
 from bs4 import BeautifulSoup
+
 import requests
 
-sexes = ["M", "F"]
+from flask import Blueprint, render_template, request
 
-name = input("Please enter your baby's first name: ")
+from app.ssa import ssa_scrape
 
-while True:
-    sex = input("Please enter your baby's sex as either 'M' or 'F': ")    
-    if sex in sexes:
-        break      
-    else: 
-        print ("Hey, please enter your baby's sex as either 'M' or 'F. Please try again!")
+ssa = Blueprint("ssa", __name__)
 
+@ssa.route("/result")
 def ssa_scrape(name, sex): #https://stackoverflow.com/questions/52835681/how-can-i-run-a-python-script-from-within-flask
     request_url = "https://www.ssa.gov/cgi-bin/babyname.cgi"
     params = {"name": name, "sex": sex}
     response = requests.post(request_url, params)
-    #print(response.status_code)
     soup = BeautifulSoup(response.text, "html.parser")
     return print(soup)
-
-ssa_scrape(name, sex)
