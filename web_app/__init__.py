@@ -21,4 +21,6 @@ def create_app():
 
 if __name__ == "__main__":
     my_app = create_app()
-    my_app.run(debug=True)
+    my_app.jinja_env.auto_reload = True
+    my_app.config['TEMPLATES_AUTO_RELOAD'] = True
+    my_app.run(debug=True, host='0.0.0.0')
