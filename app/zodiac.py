@@ -3,7 +3,8 @@ import json
 
 def zodiac_scrape(sign):
     """
-    Takes user inputted astrological sign and compiles into request url.
+    Takes user inputted astrological sign and compiles into request url to pull daily horoscope.
+    
     Params:
         Sign (string); one of 12 astrological signs determined by birthday
     
@@ -18,6 +19,16 @@ def zodiac_scrape(sign):
     return zodiac_output
 
 def zodiac_scrape_week(sign):
+    """
+    Takes user inputted astrological sign and compiles into request url to pull weekly horoscope.
+    
+    Params:
+        Sign (string); one of 12 astrological signs determined by birthday
+    
+    Examples:
+        zodiac_scrape_week(Gemini)
+        zodiac_scrape_week(Taurus)
+    """
     request_url = f"http://horoscope-api.herokuapp.com/horoscope/week/{sign}"
     response = requests.get(request_url)
     parsed_response = json.loads(response.text)
@@ -25,6 +36,16 @@ def zodiac_scrape_week(sign):
     return zodiac_output_week
 
 def zodiac_scrape_month(sign):
+    """
+    Takes user inputted astrological sign and compiles into request url to pull monthly horoscope.
+    
+    Params:
+        Sign (string); one of 12 astrological signs determined by birthday
+    
+    Examples:
+        zodiac_scrape_month(Gemini)
+        zodiac_scrape_month(Taurus)
+    """
     request_url = f"http://horoscope-api.herokuapp.com/horoscope/month/{sign}"
     response = requests.get(request_url)
     parsed_response = json.loads(response.text)
@@ -32,6 +53,16 @@ def zodiac_scrape_month(sign):
     return zodiac_output_month
 
 def zodiac_scrape_year(sign):
+    """
+    Takes user inputted astrological sign and compiles into request url to pull yearly horoscope.
+    
+    Params:
+        Sign (string); one of 12 astrological signs determined by birthday
+    
+    Examples:
+        zodiac_scrape_year(Gemini)
+        zodiac_scrape_year(Taurus)
+    """
     request_url = f"http://horoscope-api.herokuapp.com/horoscope/year/{sign}"
     response = requests.get(request_url)
     parsed_response = json.loads(response.text)
