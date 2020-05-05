@@ -20,7 +20,7 @@ def ssa_scrape(name, sex):
             facts = soup.body.find("ul").find("li")
             return facts.text
         else:
-            return "Heg is not in the top 1000 names for any year of birth beginning with 2000. Please enter another name."
+            return "Your child has a very unique name! But unfortunately, because your child's name is not in the top 1000 names for any year of birth beginning with 2000, we are unable to provide information on its popularity. Please try another name!"
 
 if __name__ == "__main__":
 
