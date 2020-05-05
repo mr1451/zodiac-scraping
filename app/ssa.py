@@ -33,6 +33,6 @@ if __name__ == "__main__":
         if sex in sexes:
             break      
         else: 
-            print ("Hey, please enter your baby's sex as either 'M' or 'F. Please try again!")
+            print ("Hey, please enter your baby's  sex as either 'M' or 'F. Please try again!")
 
     ssa_scrape(name, sex)
